@@ -53,7 +53,7 @@ export const MetaplexMenu = () => {
     return (
       <>
         <Modal
-          title={<img src={'/metaplex-logo.svg'} />}
+          title={<Button className="logo-text">MY NFT SPACE</Button>}
           visible={isModalVisible}
           footer={null}
           className={'modal-box'}
@@ -90,7 +90,7 @@ export const MetaplexMenu = () => {
                     }}
                   />
                   <Notifications />
-                  <Cog />
+                
                 </>
               )}
             </div>
@@ -144,7 +144,7 @@ export const AppBar = () => {
                 iconSize={24}
               />
               <Notifications />
-              <Cog />
+           
             </>
           )}
         </div>

@@ -451,15 +451,7 @@ export const CurrentUserBadgeMobile = (props: {
         </span>
       </div>
       <div className="actions-buttons">
-        <Button
-          className="secondary-btn"
-          onClick={() => {
-            props.closeModal ? props.closeModal() : null;
-            setShowAddFundsModal(true);
-          }}
-        >
-          Add Funds
-        </Button>
+       
         &nbsp;&nbsp;
         <Button className="black-btn" onClick={disconnect}>
           Disconnect

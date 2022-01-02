@@ -40,7 +40,7 @@ export const SalesListView = () => {
   return (
     <>
       <Banner
-    src="./test-banner.jpg"
+    src="/main-banner.svg"
     headingText="NFT Marketplace on Solana"
     subHeadingText="Up to 0% marketplace fee for our NFT holders"
        

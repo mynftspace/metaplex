@@ -602,7 +602,7 @@ export const AuctionCard = ({
             </div>
           ) : (
             <div className="actions-place-bid">
-              <HowAuctionsWorkModal buttonClassName="black-btn" />
+            
               {!hideDefaultAction &&
                 !auctionView.auction.info.ended() &&
                 (wallet.connected &&

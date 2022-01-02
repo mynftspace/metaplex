@@ -204,12 +204,7 @@ export const AuctionView = () => {
           </Col>
         )}
         <Col className="auction-mobile-section" span={24}>
-          <div className={'info-view'}>
-            <h6 className={'info-title'}>Artists</h6>
-            <div style={{ display: 'flex' }}>
-              <MetaAvatarDetailed creators={creators} />
-            </div>
-          </div>
+         
         </Col>
         <Col className="auction-mobile-section" span={24}>
           <div className={'info-view'}>

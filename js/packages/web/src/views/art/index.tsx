@@ -120,7 +120,44 @@ export const ArtView = () => {
              
             </Row>
           
-           
+            <Col>
+               
+                <div className="creators">
+                  {(art.creators || []).map((creator, idx) => {
+                    return (
+                      
+                        <div>
+                         
+                          <div style={{ marginLeft: 10 }}>
+                            {!creator.verified &&
+                              (creator.address === pubkey ? (
+                                <Button
+                                  onClick={async () => {
+                                    try {
+                                      await sendSignMetadata(
+                                        connection,
+                                        wallet,
+                                        id,
+                                      );
+                                    } catch (e) {
+                                      console.error(e);
+                                      return false;
+                                    }
+                                    return true;
+                                  }}
+                                >
+                                  Approve
+                                </Button>
+                              ) : (
+                                tag
+                              ))}
+                          </div>
+                        
+                      </div>
+                    );
+                  })}
+                </div>
+              </Col>
             
             {/* <Button
                   onClick={async () => {

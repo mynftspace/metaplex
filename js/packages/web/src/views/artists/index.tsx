@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 import { ArtistCard } from '../../components/ArtistCard';
 import { useMeta } from '../../contexts';
 
+import { CardLoader } from '../../components/MyLoader';
+
 const { Content } = Layout;
 
 export const ArtistsView = () => {
-  const { whitelistedCreatorsByCreator } = useMeta();
+  const { whitelistedCreatorsByCreator,isLoading } = useMeta();
 
   const breakpointColumnsObj = {
     default: 4,
@@ -50,7 +52,11 @@ export const ArtistsView = () => {
   return (
     <Layout style={{ margin: 0, marginTop: 30,}}>
       <Content style={{ display: 'flex', flexWrap: 'wrap', }}>
+      {isLoading &&
+                  [...Array(10)].map((_, idx) => <CardLoader key={idx} />)}
+                {!isLoading &&
         <Col style={{ width: '100%', marginTop: 10 }}>{artistGrid}</Col>
+                }
       </Content>
     </Layout>
   );

@@ -52,7 +52,7 @@ export const ArtworksView = () => {
     </div>
   );
 
-  const refreshButton = connected && storeIndexer.length !== 0 && (
+  const refreshButton = connected  && (
     <Dropdown.Button
       className={"refresh-button padding0"}
       onClick={() => pullItemsPage(userAccounts)}
@@ -79,6 +79,7 @@ export const ArtworksView = () => {
               onTabClick={key => setActiveKey(key as ArtworkViewState)}
               tabBarExtraContent={refreshButton}
             >
+           
              
               {connected && (
                 <TabPane
@@ -88,6 +89,8 @@ export const ArtworksView = () => {
                   {artworkGrid}
                 </TabPane>
               )}
+
+
              
             </Tabs>
           </Row>

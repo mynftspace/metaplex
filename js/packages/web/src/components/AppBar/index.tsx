@@ -77,10 +77,7 @@ export const MetaplexMenu = () => {
                     onClick={() => setIsModalVisible(false)}
                     className="secondary-btn"
                   />
-                  <HowToBuyModal
-                    onClick={() => setIsModalVisible(false)}
-                    buttonClassName="black-btn"
-                  />
+               
                 </div>
               ) : (
                 <>

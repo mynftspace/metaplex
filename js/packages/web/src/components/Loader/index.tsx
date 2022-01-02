@@ -6,7 +6,7 @@ export const LoaderProvider: FC = ({ children }) => {
 
   return (
     <>
-      <div className={`loader-container ${isLoading ? 'active' : ''}`}>
+      <div className={`loader-container ${isLoading ? '' : ''}`}>
         <div className="loader-block">
           <div className="loader-title">please wait...</div>
      

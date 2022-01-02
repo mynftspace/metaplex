@@ -882,10 +882,11 @@ export const AuctionCard = ({
       </MetaplexOverlay>
 
       <MetaplexOverlay visible={showRedeemedBidModal}>
-        <Confetti />
+       
         <h1
-          className="title"
+          
           style={{
+            color: 'white',
             fontSize: '3rem',
             marginBottom: 20,
           }}
@@ -899,8 +900,8 @@ export const AuctionCard = ({
             fontSize: '2rem',
           }}
         >
-         Please view your NFTs in <Link to="/wallet">My Wallet</Link>
-          .
+         View your NFTs in <Link to="/wallet">your Wallet</Link>
+          
         </p>
        
       </MetaplexOverlay>

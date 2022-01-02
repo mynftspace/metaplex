@@ -40,9 +40,9 @@ export const SalesListView = () => {
   return (
     <>
       <Banner
-    src="https://raw.githubusercontent.com/mynftspace/metaplex/gh-pages/test-banner.jpg"
-    headingText="NFT Marketplace on Solana (TEST Version)"
-    subHeadingText="Up to 0% marketplace fee for our NFT holders"
+    src="/test-banner.jpg"
+    headingText="NFT Marketplace on Solana ( Test Version )"
+    subHeadingText="0% marketplace fee ( marketplace fee will be added in the stable version )"
        
         useBannerBg
       />
@@ -58,8 +58,9 @@ export const SalesListView = () => {
                
          
                <TabPane tab="Latest Sales" key={LiveAuctionViewState.Ended}></TabPane>
+               {connected && (
                 <TabPane tab="My Listed Items" key={LiveAuctionViewState.Participated}></TabPane>
-              
+               )}
               </Tabs>
             </Row>
             <Row>

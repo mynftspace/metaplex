@@ -1967,9 +1967,9 @@ const Congrats = (props: {
       url: `${
         window.location.origin
       }/#/auction/${props.auction?.auction.toString()}`,
-      hashtags: 'NFT,Crypto,Metaplex',
-      // via: "Metaplex",
-      related: 'Metaplex,Solana',
+      hashtags: 'NFT,Crypto',
+      
+      related: 'Solana',
     };
     const queryParams = new URLSearchParams(params).toString();
     return `https://twitter.com/intent/tweet?${queryParams}`;
@@ -1991,7 +1991,7 @@ const Congrats = (props: {
         <div className="congrats-button-container">
          
           <Button
-            className="metaplex-button"
+            
             onClick={() => {
                 history.push(`/`);
                 history.go(0);
@@ -1999,11 +1999,11 @@ const Congrats = (props: {
             }
           >
             <span>Go to the homepage and refresh</span>
-            <span>&gt;</span>
+          
           </Button>
         </div>
       </div>
-      <Confetti />
+     
     </>
   );
 };

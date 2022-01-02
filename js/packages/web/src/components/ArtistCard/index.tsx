@@ -13,7 +13,7 @@ export const ArtistCard = ({ artist }: { artist: Artist }) => {
       className={`artist-card`}
       cover={
         <div className="header-container">
-          <img src="/diamond.jpg" /> 
+          <img src="https://raw.githubusercontent.com/mynftspace/metaplex/gh-pages/diamond.jpg" /> 
         </div>
       }
       bordered={false}

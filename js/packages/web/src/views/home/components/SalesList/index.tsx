@@ -40,7 +40,7 @@ export const SalesListView = () => {
   return (
     <>
       <Banner
-    src="/main-banner.svg"
+    src="https://raw.githubusercontent.com/mynftspace/metaplex/gh-pages/test-banner.jpg"
     headingText="NFT Marketplace on Solana"
     subHeadingText="Up to 0% marketplace fee for our NFT holders"
        

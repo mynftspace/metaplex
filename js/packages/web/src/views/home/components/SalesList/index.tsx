@@ -50,11 +50,12 @@ export const SalesListView = () => {
         <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
           <Col style={{ width: '100%', marginTop: 32 }}>
             <Row>
-              <Tabs
+              <Tabs 
+              style={{ display: 'flex',  justifyContent:'center' ,flexWrap: 'wrap', alignItems: 'center'}}
                 activeKey={activeKey}
                 onTabClick={key => setActiveKey(key as LiveAuctionViewState)}
               >
-               <TabPane tab="Explore" key={LiveAuctionViewState.All}></TabPane>
+               <TabPane        tab="Explore" key={LiveAuctionViewState.All}></TabPane>
                
          
                <TabPane tab="Latest Sales" key={LiveAuctionViewState.Ended}></TabPane>

@@ -500,16 +500,7 @@ export const AuctionCard = ({
 
   return (
     <div className="auction-container" style={style}>
-      <div className={'time-info'}>
-        {!auctionView.isInstantSale && (
-          <>
-            <span>Auction ends in</span>
-            <div>
-              <AuctionCountdown auctionView={auctionView} labels={false} />
-            </div>
-          </>
-        )}
-      </div>
+     
       <div className={'bid-info'}>
         <div className="bid-info-container">
           <AuctionNumbers
@@ -629,125 +620,12 @@ export const AuctionCard = ({
                     {loading ? <Spin /> : 'Start auction'}
                   </Button>
                 ) : (
-                  !showPlaceBid && (
-                    <Button
-                      className="secondary-btn"
-                      onClick={() => {
-                        if (wallet.connected) setShowPlaceBid(true);
-                        else connect();
-                      }}
-                    >
-                      Place Bid
-                    </Button>
-                  )
+                  !showPlaceBid
                 ))}
             </div>
           )}
         </div>
-        {showPlaceBid &&
-          !auctionView.isInstantSale &&
-          !hideDefaultAction &&
-          wallet.connected &&
-          !auctionView.auction.info.ended() && (
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                marginTop: '15px',
-                marginBottom: '10px',
-                borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-                paddingTop: '15px',
-              }}
-            >
-              <div
-                style={{
-                  margin: '0 0 12px 0',
-                  letterSpacing: '0.02em',
-                  fontStyle: 'normal',
-                  fontWeight: 400,
-                  fontSize: '14px',
-                  lineHeight: '14px',
-                  textTransform: 'uppercase',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                }}
-              >
-                your bid
-              </div>
-              <div className={'bid-container'}>
-                <div
-                  style={{
-                    width: '100%',
-                    background: '#242424',
-                    borderRadius: 14,
-                    color: 'rgba(0, 0, 0, 0.5)',
-                  }}
-                >
-                  <InputNumber
-                    autoFocus
-                    className="input sol-input-bid"
-                    value={value}
-                    onChange={setValue}
-                    precision={4}
-                    style={{ fontSize: 16, lineHeight: '16px' }}
-                    formatter={value =>
-                      value
-                        ? `◎ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-                        : ''
-                    }
-                    placeholder={
-                      minBid === 0
-                        ? `Place a Bid`
-                        : `Bid ${minBid} ${symbol} or more`
-                    }
-                  />
-                </div>
-                <div className={'bid-buttons'}>
-                  <Button
-                    className="metaplex-button-default"
-                    style={{
-                      background: 'transparent',
-                      color: 'white',
-                      width: 'unset',
-                      fontWeight: 600,
-                      letterSpacing: '-0.02em',
-                      border: 'none',
-                    }}
-                    disabled={loading}
-                    onClick={() => setShowPlaceBid(false)}
-                  >
-                    Cancel
-                  </Button>
-                  <Button
-                    className="secondary-btn"
-                    disabled={invalidBid}
-                    onClick={async () => {
-                      setLoading(true);
-                      if (myPayingAccount && value) {
-                        const bid = await sendPlaceBid(
-                          connection,
-                          wallet,
-                          myPayingAccount.pubkey,
-                          auctionView,
-                          accountByMint,
-                          value,
-                        );
-                        setLastBid(bid);
-                        // setShowBidModal(false);
-                        setShowBidPlaced(true);
-                        setLoading(false);
-                      }
-                    }}
-                  >
-                    {loading || !accountByMint.get(QUOTE_MINT.toBase58()) ? (
-                      <Spin />
-                    ) : (
-                      'Bid now'
-                    )}
-                  </Button>
-                </div>
-              </div>
-            </div>
-          )}
+     
         {!hideDefaultAction &&
           wallet.connected &&
           !auctionView.auction.info.ended() &&

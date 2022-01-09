@@ -144,7 +144,7 @@ export const AppBar = () => {
                 iconSize={24}
               />
               <Notifications />
-           
+          
             </>
           )}
         </div>
